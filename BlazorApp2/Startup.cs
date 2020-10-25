@@ -31,6 +31,9 @@ namespace BlazorApp2
             services.AddSingleton<ListadoTareasService>();
             services.AddSingleton<DataContext>();
             services.AddSingleton<UsuarioService>();
+            services.AddSingleton<RecursosService>();
+            services.AddSingleton<TareaService>();
+            services.AddSingleton<DetalleService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
