@@ -1,0 +1,46 @@
+﻿@page "/usuarios/listadoUsuarios"
+@using BlazorApp2.Data
+@inject UsuarioService service
+@inject NavigationManager navigation
+
+<h3>Listadodeusuarios</h3>
+
+@if (usuarios == null)
+{
+
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in usuarios)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td><button @onclick="()=>Editar(item.Id)"></button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+@code {
+    private List<Usuario> usuarios;
+
+    protected override async Task OnInitializedAsync()
+    {
+        usuarios = await service.GetAll();
+    }
+
+    protected void Editar(int id)
+    {
+
+    }
+}
+
