@@ -28,8 +28,8 @@ namespace BlazorApp2
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<ListadoTareasService>();
+            services.AddSingleton<DataContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
