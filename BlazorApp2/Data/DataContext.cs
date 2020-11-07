@@ -16,12 +16,9 @@ namespace BlazorApp2.Data
                 .Property(p => p.clave);
             modelBuilder.Entity<Tarea>()
                 .ToTable("Tarea");
-            modelBuilder.Entity<Recurso>()
-                .ToTable("Recurso");
-            modelBuilder.Entity<Detalle>()
-                .ToTable("Detalle");
         }
         //siguiente linea es para poder ingresar los usuarios declarados en el program.cs
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Tarea> Tareas { get; set; }
     }
 }

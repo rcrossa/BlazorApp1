@@ -12,13 +12,9 @@ namespace BlazorApp2.Data
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int idTarea { get; set; }
+        public int Id { get; set; }
         public string Titulo { get; set; }
-        public DateTime Vencimiento { get; set; }
-        public int Estimacion { get; set; }
-        public Recurso Responsable { get; set; }
-        public bool Estado { get; set; }
-
-        public Tarea() { }
+        public int TipoId { get; set; }
+        public TipoTarea Tipo { get; set; }
     }
 }

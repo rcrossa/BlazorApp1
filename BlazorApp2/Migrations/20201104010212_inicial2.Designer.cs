@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorApp2.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201021012904_inicial")]
-    partial class inicial
+    [Migration("20201104010212_inicial2")]
+    partial class inicial2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,7 @@ namespace BlazorApp2.Migrations
                     b.Property<string>("Recursonombre")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("TareaidTarea")
+                    b.Property<int?>("TareaId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Tiempo")
@@ -36,7 +36,7 @@ namespace BlazorApp2.Migrations
 
                     b.HasIndex("Recursonombre");
 
-                    b.HasIndex("TareaidTarea");
+                    b.HasIndex("TareaId");
 
                     b.ToTable("Detalle");
                 });
@@ -58,42 +58,47 @@ namespace BlazorApp2.Migrations
 
             modelBuilder.Entity("BlazorApp2.Data.Tarea", b =>
                 {
-                    b.Property<int>("idTarea")
+                    b.Property<int>("Id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("Estado")
+                    b.Property<int>("TipoId")
                         .HasColumnType("INTEGER");
-
-                    b.Property<int>("Estimacion")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Responsablenombre")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Titulo")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Vencimiento")
-                        .HasColumnType("TEXT");
+                    b.HasKey("Id");
 
-                    b.HasKey("idTarea");
-
-                    b.HasIndex("Responsablenombre");
+                    b.HasIndex("TipoId");
 
                     b.ToTable("Tarea");
+                });
+
+            modelBuilder.Entity("BlazorApp2.Data.TipoTarea", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoTarea");
                 });
 
             modelBuilder.Entity("BlazorApp2.Data.Usuario", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("clave")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("nombre")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("usuarioid")
                         .HasColumnType("TEXT");
@@ -111,7 +116,7 @@ namespace BlazorApp2.Migrations
 
                     b.HasOne("BlazorApp2.Data.Tarea", "Tarea")
                         .WithMany()
-                        .HasForeignKey("TareaidTarea");
+                        .HasForeignKey("TareaId");
                 });
 
             modelBuilder.Entity("BlazorApp2.Data.Recurso", b =>
@@ -123,9 +128,11 @@ namespace BlazorApp2.Migrations
 
             modelBuilder.Entity("BlazorApp2.Data.Tarea", b =>
                 {
-                    b.HasOne("BlazorApp2.Data.Recurso", "Responsable")
+                    b.HasOne("BlazorApp2.Data.TipoTarea", "Tipo")
                         .WithMany()
-                        .HasForeignKey("Responsablenombre");
+                        .HasForeignKey("TipoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

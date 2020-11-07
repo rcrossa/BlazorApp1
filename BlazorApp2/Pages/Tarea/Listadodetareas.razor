@@ -1,0 +1,62 @@
+﻿@page "/Tarea/Listadodetareas"
+
+<h3>Listadodetareas</h3>
+@using BlazorApp2.Data
+@inject TareaService service
+@inject NavigationManager navigation
+
+<h1>Es una prueba</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+@if (tareas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Titulo</th>
+            <th>Tipo id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in tareas)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Tipo</td>
+            <td>@item.TipoId</td>
+            <td>@item.Titulo</td>
+            //
+            <td>
+                //     <button class="btn" @onclick="()=>Editar(item.Id)">Editar</button>
+                //     <button class="btn" @onclick="()=>Borrar(item.Id)">Borrar</button>
+                //
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+}
+@code {
+    private List<Tarea> tareas;
+
+    protected override async Task OnInitializedAsync()
+    {
+         tareas = await service.GetAll();
+    }
+
+    protected void Editar(int Id)
+    {
+        navigation.NavigateTo("Tarea/Editar/" + Id);
+    }
+    async Task Borrar(int id)
+    {
+
+        await service.Remove(id);
+        tareas = await service.GetAll();
+    }
+}

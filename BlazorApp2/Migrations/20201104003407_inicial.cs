@@ -8,17 +8,50 @@ namespace BlazorApp2.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "TipoTarea",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nombre = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TipoTarea", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuario",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
-                    nombre = table.Column<string>(maxLength: 50, nullable: true),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    nombre = table.Column<string>(nullable: true),
                     usuarioid = table.Column<string>(nullable: true),
                     clave = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuario", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tarea",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false),
+                    Titulo = table.Column<string>(nullable: true),
+                    TipoId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tarea", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Tarea_TipoTarea_TipoId",
+                        column: x => x.TipoId,
+                        principalTable: "TipoTarea",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -40,35 +73,13 @@ namespace BlazorApp2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tarea",
-                columns: table => new
-                {
-                    idTarea = table.Column<int>(nullable: false),
-                    Titulo = table.Column<string>(nullable: true),
-                    Vencimiento = table.Column<DateTime>(nullable: false),
-                    Estimacion = table.Column<int>(nullable: false),
-                    Responsablenombre = table.Column<string>(nullable: true),
-                    Estado = table.Column<bool>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tarea", x => x.idTarea);
-                    table.ForeignKey(
-                        name: "FK_Tarea_Recurso_Responsablenombre",
-                        column: x => x.Responsablenombre,
-                        principalTable: "Recurso",
-                        principalColumn: "nombre",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Detalle",
                 columns: table => new
                 {
                     Fecha = table.Column<DateTime>(nullable: false),
                     Tiempo = table.Column<string>(nullable: true),
                     Recursonombre = table.Column<string>(nullable: true),
-                    TareaidTarea = table.Column<int>(nullable: true)
+                    TareaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -80,10 +91,10 @@ namespace BlazorApp2.Migrations
                         principalColumn: "nombre",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Detalle_Tarea_TareaidTarea",
-                        column: x => x.TareaidTarea,
+                        name: "FK_Detalle_Tarea_TareaId",
+                        column: x => x.TareaId,
                         principalTable: "Tarea",
-                        principalColumn: "idTarea",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -93,9 +104,9 @@ namespace BlazorApp2.Migrations
                 column: "Recursonombre");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Detalle_TareaidTarea",
+                name: "IX_Detalle_TareaId",
                 table: "Detalle",
-                column: "TareaidTarea");
+                column: "TareaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Recurso_usuarioId",
@@ -103,9 +114,9 @@ namespace BlazorApp2.Migrations
                 column: "usuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tarea_Responsablenombre",
+                name: "IX_Tarea_TipoId",
                 table: "Tarea",
-                column: "Responsablenombre");
+                column: "TipoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -114,13 +125,16 @@ namespace BlazorApp2.Migrations
                 name: "Detalle");
 
             migrationBuilder.DropTable(
-                name: "Tarea");
-
-            migrationBuilder.DropTable(
                 name: "Recurso");
 
             migrationBuilder.DropTable(
+                name: "Tarea");
+
+            migrationBuilder.DropTable(
                 name: "Usuario");
+
+            migrationBuilder.DropTable(
+                name: "TipoTarea");
         }
     }
 }
