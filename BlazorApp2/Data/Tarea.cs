@@ -14,7 +14,7 @@ namespace BlazorApp2.Data
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         public string Titulo { get; set; }
-        public int TipoId { get; set; }
+        public string TipoId { get; set; }
         public TipoTarea Tipo { get; set; }
     }
 }
