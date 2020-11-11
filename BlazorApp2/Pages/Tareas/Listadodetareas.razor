@@ -14,18 +14,17 @@ else
 <table class="table">
     <thead>
         <tr>
-            <th>Titulo</th>
             <th>Tipo id</th>
+            <th>Tipo Titulo</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in tareas)
         {
         <tr>
-            <td>@item.Tipo</td>
             <td>@item.TipoId</td>
             <td>@item.Titulo</td>
-            //
+           
             <td>
                      <button class="btn" @onclick="()=>Editar(item.Id)">Editar</button>
                      <button class="btn" @onclick="()=>Borrar(item.Id)">Borrar</button>
