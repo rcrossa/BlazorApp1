@@ -1,13 +1,10 @@
-﻿@page "/Tarea/Listadodetareas"
+﻿@page "/Tareas/Listadodetareas"
 
-<h3>Listadodetareas</h3>
 @using BlazorApp2.Data
 @inject TareaService service
 @inject NavigationManager navigation
 
-<h1>Es una prueba</h1>
-
-<p>This component demonstrates fetching data from a service.</p>
+<h3>Listadodetareas</h3>
 @if (tareas == null)
 {
     <p><em>Loading...</em></p>
@@ -17,7 +14,6 @@ else
 <table class="table">
     <thead>
         <tr>
-            <th>id</th>
             <th>Titulo</th>
             <th>Tipo id</th>
         </tr>
@@ -26,15 +22,14 @@ else
         @foreach (var item in tareas)
         {
         <tr>
-            <td>@item.Id</td>
             <td>@item.Tipo</td>
             <td>@item.TipoId</td>
             <td>@item.Titulo</td>
             //
             <td>
-                //     <button class="btn" @onclick="()=>Editar(item.Id)">Editar</button>
-                //     <button class="btn" @onclick="()=>Borrar(item.Id)">Borrar</button>
-                //
+                     <button class="btn" @onclick="()=>Editar(item.Id)">Editar</button>
+                     <button class="btn" @onclick="()=>Borrar(item.Id)">Borrar</button>
+                
             </td>
         </tr>
         }
@@ -51,7 +46,7 @@ else
 
     protected void Editar(int Id)
     {
-        navigation.NavigateTo("Tarea/Editar/" + Id);
+        navigation.NavigateTo("Tareas/Editar/" + Id);
     }
     async Task Borrar(int id)
     {

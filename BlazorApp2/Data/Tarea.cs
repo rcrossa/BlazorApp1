@@ -10,8 +10,7 @@ namespace BlazorApp2.Data
     public class Tarea
     {
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        
         public int Id { get; set; }
         public string Titulo { get; set; }
         public string TipoId { get; set; }

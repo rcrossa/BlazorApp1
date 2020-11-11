@@ -1,14 +1,11 @@
-﻿@page "/Tarea/Editar/{id:int}"
+﻿@page "/Tareas/Editar/{id:int}"
 @using BlazorApp2.Data
-@inject Listadodetareas service
+@inject TareaService service
 @inject NavigationManager navigation
-
 <EditForm Model="@Modelo" OnValidSubmit="@Guardar">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <InputText @bind-Value="Modelo.Id" />
-    <InputText @bind-Value="Modelo.Tipo" />
     <InputText @bind-Value="Modelo.TipoId" />
     <InputText @bind-Value="Modelo.Titulo" />
 
@@ -16,6 +13,7 @@
 
     <button type="submit">Guardar</button>
 </EditForm>
+
 @code {
     [Parameter]
     public int Id { get; set; }
@@ -33,13 +31,10 @@
             Modelo = new Tarea();
         }
     }
-
-
-    private async void Guardar()
-    {
+    private async void Guardar() {
         await service.Save(Modelo);
-        navigation.NavigateTo("Tarea/Listadodetareas");
+        navigation.NavigateTo("Tareas/Listadodetareas");
     }
 
 }
-    
+}
