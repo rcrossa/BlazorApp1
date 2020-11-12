@@ -14,6 +14,6 @@ namespace BlazorApp2.Data
         public int Id { get; set; }
         public string Titulo { get; set; }
         public string TipoId { get; set; }
-        public TipoTarea Tipo { get; set; }
+        public TipoTarea idTipo { get; set; }
     }
 }

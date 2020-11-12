@@ -4,13 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+
 namespace BlazorApp2.Data
 {
-    public class TipoTarea
+    public class Recurso
     {
-        
-        public int Id { get; set; }
-        public string Tipo { get; set; }
-        public int idTipo { get; set; }
+        [Key]
+        public string nombre { get; set;}
+        public Usuario usuario {get; set; }
+    
     }
 }

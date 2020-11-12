@@ -16,6 +16,44 @@ namespace BlazorApp2.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.9");
 
+            modelBuilder.Entity("BlazorApp2.Data.Detalle", b =>
+                {
+                    b.Property<string>("Fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Recursonombre")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("TareaId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Tiempo")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Fecha");
+
+                    b.HasIndex("Recursonombre");
+
+                    b.HasIndex("TareaId");
+
+                    b.ToTable("Detalle");
+                });
+
+            modelBuilder.Entity("BlazorApp2.Data.Recurso", b =>
+                {
+                    b.Property<string>("nombre")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("usuarioId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("nombre");
+
+                    b.HasIndex("usuarioId");
+
+                    b.ToTable("Recurso");
+                });
+
             modelBuilder.Entity("BlazorApp2.Data.Tarea", b =>
                 {
                     b.Property<int>("Id")
@@ -25,15 +63,15 @@ namespace BlazorApp2.Migrations
                     b.Property<string>("TipoId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("TipoId1")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Titulo")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("idTipoId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("TipoId1");
+                    b.HasIndex("idTipoId");
 
                     b.ToTable("Tarea");
                 });
@@ -44,8 +82,11 @@ namespace BlazorApp2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("Tipo")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("idTipo")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -72,11 +113,29 @@ namespace BlazorApp2.Migrations
                     b.ToTable("Usuario");
                 });
 
+            modelBuilder.Entity("BlazorApp2.Data.Detalle", b =>
+                {
+                    b.HasOne("BlazorApp2.Data.Recurso", "Recurso")
+                        .WithMany()
+                        .HasForeignKey("Recursonombre");
+
+                    b.HasOne("BlazorApp2.Data.Tarea", "Tarea")
+                        .WithMany()
+                        .HasForeignKey("TareaId");
+                });
+
+            modelBuilder.Entity("BlazorApp2.Data.Recurso", b =>
+                {
+                    b.HasOne("BlazorApp2.Data.Usuario", "usuario")
+                        .WithMany()
+                        .HasForeignKey("usuarioId");
+                });
+
             modelBuilder.Entity("BlazorApp2.Data.Tarea", b =>
                 {
-                    b.HasOne("BlazorApp2.Data.TipoTarea", "Tipo")
+                    b.HasOne("BlazorApp2.Data.TipoTarea", "idTipo")
                         .WithMany()
-                        .HasForeignKey("TipoId1");
+                        .HasForeignKey("idTipoId");
                 });
 #pragma warning restore 612, 618
         }

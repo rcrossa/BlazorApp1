@@ -14,9 +14,9 @@ namespace BlazorApp2.Data
         {
             context = _context;
         }
-        public async Task<Tarea> Get(int id)
+        public async Task<Tarea> Get(int Id)
         {
-            return await context.Tareas.Where(i => i.Id == id).SingleAsync();
+            return await context.Tareas.Where(i => i.Id == Id).SingleAsync();
         }
 
         public async Task<List<Tarea>> GetAll()
