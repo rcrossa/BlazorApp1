@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R0McoJvpsA8jnclxxUIpLkgqSGqC0ejcwLc8eHounYDNYpnQHXlOkhbE/qLov0LQQhWpGWx4Qimu3Fes5fE1DQ==",
+  "dgSpecHash": "BS4/m+MFMpBSyQz1jSLZO2KPbGY8qkSbKDQy+akmqOywfWMDZ53CP8QzVDJORHWEzFpjW84o0oT3//+8WbcwMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+  "projectFilePath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\BlazorApp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roberto Rossa\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Roberto Rossa\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

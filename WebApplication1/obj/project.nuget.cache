@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CC8JLggFFmVbNIE+BcliP1AjDaN9dtWmlxA5JazYclzjycwHl2iitc3nHBPQELCwg6GkYo34R5Dc6mkhE7ILMg==",
+  "dgSpecHash": "8TyGEUUj63LXVxvAEJ6mHmZ6f6G4Hf1hvMkQgIKL+WYNxk+bvQ8m94QY44qkWfZo44FYOTg8t1VTZ09wpx4ztg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roberto Rossa\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Roberto Rossa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

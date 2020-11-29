@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectUniqueName": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\ClassLibrary1.csproj",
       "projectName": "ClassLibrary1",
-      "projectPath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectPath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\ClassLibrary1.csproj",
       "packagesPath": "C:\\Users\\Roberto Rossa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\obj\\",
+      "outputPath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Roberto Rossa\\AppData\\Roaming\\NuGet\\NuGet.Config",

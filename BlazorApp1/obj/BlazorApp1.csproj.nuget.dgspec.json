@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {}
+    "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\BlazorApp1\\BlazorApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {
+    "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\BlazorApp1\\BlazorApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\BlazorApp1\\BlazorApp1.csproj",
         "projectName": "BlazorApp1",
-        "projectPath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "projectPath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\BlazorApp1\\BlazorApp1.csproj",
         "packagesPath": "C:\\Users\\Roberto Rossa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\BlazorApp1\\obj\\",
+        "outputPath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\BlazorApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roberto Rossa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
-                "projectPath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\ClassLibrary1.csproj"
+              "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\ClassLibrary1.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
+    "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectUniqueName": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectPath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\ClassLibrary1.csproj",
         "packagesPath": "C:\\Users\\Roberto Rossa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Roberto Rossa\\source\\repos\\BlazorApp1\\ClassLibrary1\\obj\\",
+        "outputPath": "C:\\Users\\Roberto Rossa\\Desktop\\escuela2020\\Davinci\\Plataformas-de-desarrollo\\ejecicios\\BlazorApp2\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roberto Rossa\\AppData\\Roaming\\NuGet\\NuGet.Config",
