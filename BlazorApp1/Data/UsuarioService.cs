@@ -16,7 +16,7 @@ namespace BlazorApp1.Data
             ctx = _context;
         }
 
-        // Metodos de Usuarios (User)
+        // Metodos de Usuarios (Usuario)
         public async Task<List<Usuario>> ListUser()
         {
             //return await ctx.Usuarios.ToListAsync();
