@@ -129,11 +129,43 @@ namespace BlazorApp1.Data
         }
 
         /// <inheritdoc />
+        Task<Detalle> IRemoteService.GuardarDetalle(Detalle valor)
+        {
+            var arguments = new object[] { valor };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GuardarDetalle", new Type[] { typeof(Detalle) });
+            return (Task<Detalle>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Detalle> IRemoteService.BorrarDetalle(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("BorrarDetalle", new Type[] { typeof(int) });
+            return (Task<Detalle>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
         Task<List<Recurso>> IRemoteService.GetAllRecurso()
         {
             var arguments = new object[] {  };
             var func = requestBuilder.BuildRestResultFuncForMethod("GetAllRecurso", new Type[] {  });
             return (Task<List<Recurso>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Recurso> IRemoteService.GuardarRecurso(Recurso valor)
+        {
+            var arguments = new object[] { valor };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GuardarRecurso", new Type[] { typeof(Recurso) });
+            return (Task<Recurso>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Recurso> IRemoteService.BorrarRecurso(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("BorrarRecurso", new Type[] { typeof(int) });
+            return (Task<Recurso>)func(Client, arguments);
         }
     }
 }

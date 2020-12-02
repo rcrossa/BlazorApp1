@@ -50,11 +50,11 @@
 
     public string RecursoId { get; set; }
 
-    private List<Recurso> Recursos;
+    private List<Recurso> Recursos = new List<Recurso>();
 
     public string TareaId { get; set; }
 
-    private List<Tarea> Tareas;
+    private List<Tarea> Tareas = new List<Tarea>();
 
     protected override async Task OnInitializedAsync()
     {

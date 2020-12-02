@@ -28,36 +28,27 @@ namespace BlazorApp1.Data
 
         public async Task<Tarea> SelectTask(int id)
         {
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44373/api/");
             return await ctx.Tareas.Where(i => i.Id == id).SingleAsync();
         }
 
         public async Task<Tarea> SaveTask(Tarea value)
         {
-            if (value.Id == 0)
-            {
-                await ctx.Tareas.AddAsync(value);
-            }
-            else
-            {
-                ctx.Tareas.Update(value);
-            }
-            await ctx.SaveChangesAsync();
-            return value;
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44373/api/");
+            return await remoteService.GuardarTarea(value);
         }
 
         public async Task<bool> DeleteTask(int id)
         {
-            Tarea task = await ctx.Tareas.Where(i => i.Id == id).SingleAsync();
-
-            ctx.Tareas.Remove(task);
-
-            await ctx.SaveChangesAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44373/api/");
+            await remoteService.BorrarTarea(id);
             return true;
         }
 
         public async Task<List<Recurso>> GetResource()
         {
-            return await ctx.Recursos.ToListAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44373/api/");
+            return await remoteService.GetAllRecurso();
         }
 
     }
