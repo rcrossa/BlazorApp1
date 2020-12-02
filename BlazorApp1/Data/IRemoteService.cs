@@ -34,6 +34,10 @@ namespace BlazorApp1.Data
 
         [Get("/Detalle")]
         Task<List<Detalle>> GetAllDetalle();
+
+        [Get("/Detalle/{id}")]
+        Task<Detalle> GetDetalle(int id);
+
         [Post("/Detalle")]
         Task<Detalle> GuardarDetalle(Detalle valor);
         [Delete("/Detalle/{id}")]
@@ -42,6 +46,9 @@ namespace BlazorApp1.Data
 
         [Get("/Recurso")]
         Task<List<Recurso>> GetAllRecurso();
+
+        [Get("/Recurso/{id}")]
+        Task<Recurso> GetRecurso(int id);
 
         [Post("/Recurso")]
         Task<Recurso> GuardarRecurso(Recurso valor);

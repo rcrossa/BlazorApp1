@@ -27,7 +27,7 @@ namespace BlazorApp1.Data
         public async Task<Usuario> SelectUser(int id)
         {
             var remoteService = RestService.For<IRemoteService>("https://localhost:44373/api/");
-            return await ctx.Usuarios.Where(i => i.UsuarioPK == id).SingleAsync();
+            return await remoteService.GetUsuario(id);
         }
 
         public async Task<Usuario> SaveUser(Usuario value)

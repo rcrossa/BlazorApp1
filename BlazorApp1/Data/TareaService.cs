@@ -29,7 +29,7 @@ namespace BlazorApp1.Data
         public async Task<Tarea> SelectTask(int id)
         {
             var remoteService = RestService.For<IRemoteService>("https://localhost:44373/api/");
-            return await ctx.Tareas.Where(i => i.Id == id).SingleAsync();
+            return await remoteService.GetTarea(id);
         }
 
         public async Task<Tarea> SaveTask(Tarea value)

@@ -129,6 +129,14 @@ namespace BlazorApp1.Data
         }
 
         /// <inheritdoc />
+        Task<Detalle> IRemoteService.GetDetalle(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetDetalle", new Type[] { typeof(int) });
+            return (Task<Detalle>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
         Task<Detalle> IRemoteService.GuardarDetalle(Detalle valor)
         {
             var arguments = new object[] { valor };
@@ -150,6 +158,14 @@ namespace BlazorApp1.Data
             var arguments = new object[] {  };
             var func = requestBuilder.BuildRestResultFuncForMethod("GetAllRecurso", new Type[] {  });
             return (Task<List<Recurso>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Recurso> IRemoteService.GetRecurso(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetRecurso", new Type[] { typeof(int) });
+            return (Task<Recurso>)func(Client, arguments);
         }
 
         /// <inheritdoc />

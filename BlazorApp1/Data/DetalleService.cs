@@ -28,7 +28,7 @@ namespace BlazorApp1.Data
         public async Task<Detalle> SelectDetail(int id)
         {
             var remoteService = RestService.For<IRemoteService>("https://localhost:44373/api/");
-            return await ctx.Detalles.Where(i => i.Id == id).SingleAsync();
+            return await remoteService.GetDetalle(id);
         }
 
         public async Task<Detalle> SaveDetail(Detalle value)
